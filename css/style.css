@@ -31,22 +31,39 @@ body {
 }
 .uptoclose-item {
     color: #000 !important;
-    display: none;
 }
 .mem__item:has(input:checked) .down {
    display: block;
 }
-
+.mem__item:hover .uptoclose-item {
+    display: block;
+}
+.mem__item:has(input:checked) {
+    color: #000;
+}
 .mem__item:hover  {
     color: #48dd69;
 }
-.mem__item:hover .uptoclose-item {
-    transform: rotate(-45deg);
-    display: block;
-}
+
+
 @media (any-hover: hover) {
     .mem__item:hover .down {
         display: block;
     }
-
+    .mem__item:hover .uptoclose-item {
+        transform: rotate(-45deg);
+        display: block;
+    }
 }
+
+
+
+
+.down__text {
+    animation: ani 0.3s forwards;
+}
+@keyframes ani {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  
