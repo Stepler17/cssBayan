@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    font-family: 'Heebo', sans-serif;
+    background-color: #6daec2;
+}
+.container{
+    max-width: 500px;
+    margin: 20px auto;
+}
+.bayan_wrapper-title {
+    color: #fff;
+    text-align: center;
+}
+.mem__item {
+    display: block;
+    border-top: 1px solid #fff;
+}
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input_mem {
+    display: none;
+}
+.down {
+    display: none;
+}
+.uptoclose-item {
+    color: #000 !important;
+    display: none;
+}
+.mem__item:has(input:checked) .down {
+   display: block;
+}
+
+.mem__item:hover  {
+    color: #48dd69;
+}
+.mem__item:hover .uptoclose-item {
+    transform: rotate(-45deg);
+    display: block;
+}
+@media (any-hover: hover) {
+    .mem__item:hover .down {
+        display: block;
+    }
+
+}
