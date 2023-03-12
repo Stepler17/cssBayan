@@ -1,80 +1,111 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 body {
-    font-family: 'Heebo', sans-serif;
-    background-color: #6daec2;
+  font-family: "Heebo", sans-serif;
+  background-color: #F2F3D9;
+  color: #151E3F;
 }
-.container{
-    max-width: 500px;
-    margin: 20px auto;
+
+.container {
+  max-width: 500px;
+  margin: 20px auto;
 }
 .bayan_wrapper-title {
-    color: #fff;
-    text-align: center;
+  color: #151E3F;
+  text-align: center;
 }
 .bayan-title {
-    padding: 10px 0 ;
+  padding: 10px 0;
 }
 .mem__item {
-    display: block;
-    border-top: 1px solid #fff;
+  display: block;
+  border-top: 1px solid #151E3F;
 }
 .top {
-    display: flex;
-    justify-content: space-between;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
 }
 
 .input_mem {
-    display: none;
+  display: none;
 }
 .down {
-    margin-bottom: 10px;
-    display: none;
+  display: none;
+  margin-bottom: 10px;
 }
 .bayan_img {
-    display: block;
-    max-width: 350px;
-    margin: 0 auto;
+  display: block;
+  max-width: 350px;
+  max-height: 350px;
+  margin: 0 auto;
 }
-.uptoclose-item {
-    display: none;
-    padding: 10px 0;
-    color: #000 !important;
+
+.uptoclose-item-img {
+  padding: 10px 0;
 }
 .mem__item:has(input:checked) .down {
-   display: block;
+  display: block;
+  animation: shows 1s;
 }
-
-.mem__item:has(input:checked) {
-    color: #000;
+.mem__item:has(input:checked) .bayan-title {
+  color: #FF474A;
 }
-
-.mem__item:hover  {
-    color: #48dd69;
+.mem__item:has(input:checked) .uptoclose-item-img {
+  transform: rotate(-180deg);
 }
-
-
-@media (any-hover: hover) {
-    .mem__item:hover .down {
-        display: block;
-    }
-    .mem__item:hover .uptoclose-item {
-        transform: rotate(-45deg);
-        display: block;
-    }
-
+.mem__item:active div span {
+  color: #151E3F!important;
 }
-
-
-
-
-.down__text {
-    animation: ani 0.3s forwards;
-}
-@keyframes ani {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+.mem__item:hover .uptoclose-item-img {
+    transform: rotate(-180deg);
+    display: block;
+    transition: all 0.2s;
   }
-  
+
+
+@media (hover: hover) {
+    .uptoclose-item-img {
+        display: none;
+        padding: 10px 0;
+      }
+
+  .mem__item:hover .down {
+    display: block;
+
+    animation: shows 1s;
+  }
+  .mem__item:hover .uptoclose-item-img {
+    transform: rotate(-180deg);
+    display: block;
+    transition: all 0.2s;
+
+  }
+
+  .container:hover .uptoclose-item-img {
+  transition: all 0.2s;
+  display: block;
+}
+.container:hover .bayan-title {
+  color: #FF474A;
+}
+.container:hover .mem__item:not(:hover) {
+  color: #FF474A;
+}
+
+.transition:hover {
+  transition: 1s;
+}
+}
+
+
+@keyframes shows {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
