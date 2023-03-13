@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Heebo";
+  background-color: #f2f3d9;
+  color: #151e3f;
+}
+.container {
+  max-width: 56.25rem;
+  margin: 0.625rem auto;
+  padding: 0 0.625rem;
+}
+.bayan-title {
+    font-size: 3.125rem;
+  color: #151e3f;
+  text-align: center;
+}
+.bayan__top-title{
+  font-size: 1.875rem;
+  padding: 0.625rem 0;
+}
+.mem-item {
+  display: block;
+  border-top: 0.063rem solid #151e3f;
+}
+.bayan__top-box {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input_mem {
+  display: none;
+}
+.down {
+  display: none;
+  margin-bottom: 0.625rem;
+}
+.bayan_img {
+  display: block;
+  max-width: 21.875rem;
+  max-height: 21.875rem;
+  margin: 0 auto;
+}
+
+.uptoclose-item-img {
+  padding: 0.938rem 0;
+}
+
+/* Логика работы аккордеона  */
+.mem-item:has(input:checked) .down {
+  display: block;
+  animation: shows 1s;
+}
+.mem-item:has(input:checked) .bayan__top-title {
+  color: #ff474a;
+}
+.mem-item:has(input:checked) .uptoclose-item-img {
+  transform: rotate(-180deg);
+}
+.mem-item:active div span {
+  color: #151e3f !important;
+}
+.mem-item:hover .uptoclose-item-img {
+  transform: rotate(-180deg);
+  display: block;
+  transition: all 0.5s;
+}
+
+/* Для устройств без курсора  */
+@media (hover: hover) {
+  .uptoclose-item-img {
+
+    display: none;
+    padding: 0.938rem 0;
+  }
+
+  .mem-item:hover .down {
+    display: block;
+    animation: shows 1s;
+  }
+  .mem-item:hover .uptoclose-item-img {
+    transform: rotate(-180deg);
+    display: block;
+    transition: all 0.5s;
+  }
+  .container:hover .uptoclose-item-img {
+    transition: all 0.5s;
+    display: block;
+  }
+  .container:hover .bayan__top-title {
+    color: #ff474a;
+  }
+  .container:hover .mem-item {
+    cursor: pointer;
+  }
+  .container:hover .mem-item:not(:hover) {
+    color: #ff474a;
+  }
+  .transition:hover {
+    transition: 0.5s;
+  }
+}
+
+/* Анимация появления мема */
+@keyframes shows {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Адаптив начинается тут */
+@media (max-width:1100px) {
+    .container {
+        max-width: 37.5rem;
+      }
+      .bayan__top-title {
+        font-size: 1.25rem;
+      }
+      .bayan-title {
+        font-size: 2.5rem;
+
+    }
+}
+@media (max-width:636px) {
+    .container {
+        max-width: 18.75rem;
+      }
+      .bayan__top-title {
+        font-size: 0.875rem;
+      }
+      .bayan_img {
+
+        max-width: 15.625rem;
+        max-height: 15.625rem;
+
+      }
+      .bayan-title {
+        font-size: 1.563rem;
+
+    }
+
+}
